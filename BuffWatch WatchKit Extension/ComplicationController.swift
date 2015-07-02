@@ -50,14 +50,22 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-        handler(nil);
+        handler(nil)
     }
     
     // MARK: - Placeholder Templates
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        switch complication.family {
+        case .UtilitarianLarge:
+            let template: CLKComplicationTemplateUtilitarianLargeFlat = CLKComplicationTemplateUtilitarianLargeFlat()
+            let simpleTextProvider: CLKSimpleTextProvider = CLKSimpleTextProvider(text: "Hello World")
+            template.textProvider = simpleTextProvider
+            handler(template)
+        default:
+            handler(nil)
+        }
     }
     
 }

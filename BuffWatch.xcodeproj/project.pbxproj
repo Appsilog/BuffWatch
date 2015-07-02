@@ -334,6 +334,7 @@
 				TargetAttributes = {
 					698541941B44C5AA00C7E2D9 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 573ZWR4T3Q;
 					};
 					698541A81B44C5AA00C7E2D9 = {
 						CreatedOnToolsVersion = 7.0;
@@ -345,9 +346,11 @@
 					};
 					698541BC1B44C5AA00C7E2D9 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 573ZWR4T3Q;
 					};
 					698541CB1B44C5AB00C7E2D9 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 573ZWR4T3Q;
 					};
 				};
 			};
@@ -593,11 +596,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "BuffWatch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -609,11 +614,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "BuffWatch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -625,6 +632,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = BuffWatch_WatchKit_Extension;
@@ -642,6 +650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = BuffWatch_WatchKit_Extension;
@@ -659,6 +668,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BuffWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch;
@@ -670,6 +680,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BuffWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch;
@@ -744,6 +755,7 @@
 				698541E41B44C5AB00C7E2D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		698541E61B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatch WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -752,6 +764,7 @@
 				698541E81B44C5AB00C7E2D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		698541EA1B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatch" */ = {
 			isa = XCConfigurationList;
@@ -760,6 +773,7 @@
 				698541EC1B44C5AB00C7E2D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		698541ED1B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -768,6 +782,7 @@
 				698541EF1B44C5AB00C7E2D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		698541F01B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatchUITests" */ = {
 			isa = XCConfigurationList;
@@ -776,6 +791,7 @@
 				698541F21B44C5AB00C7E2D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
