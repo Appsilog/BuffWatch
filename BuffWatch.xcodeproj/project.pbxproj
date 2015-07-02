@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		698541991B44C5AA00C7E2D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541981B44C5AA00C7E2D9 /* AppDelegate.swift */; };
+		6985419B1B44C5AA00C7E2D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985419A1B44C5AA00C7E2D9 /* ViewController.swift */; };
+		6985419E1B44C5AA00C7E2D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6985419C1B44C5AA00C7E2D9 /* Main.storyboard */; };
+		698541A01B44C5AA00C7E2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6985419F1B44C5AA00C7E2D9 /* Assets.xcassets */; };
+		698541A31B44C5AA00C7E2D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 698541A11B44C5AA00C7E2D9 /* LaunchScreen.storyboard */; };
+		698541AE1B44C5AA00C7E2D9 /* BuffWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541AD1B44C5AA00C7E2D9 /* BuffWatchTests.swift */; };
+		698541B91B44C5AA00C7E2D9 /* BuffWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541B81B44C5AA00C7E2D9 /* BuffWatchUITests.swift */; };
+		698541BE1B44C5AA00C7E2D9 /* BuffWatch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 698541BD1B44C5AA00C7E2D9 /* BuffWatch WatchKit App.app */; };
+		698541C41B44C5AA00C7E2D9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 698541C21B44C5AA00C7E2D9 /* Interface.storyboard */; };
+		698541C61B44C5AA00C7E2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698541C51B44C5AA00C7E2D9 /* Assets.xcassets */; };
+		698541CD1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 698541CC1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		698541D41B44C5AB00C7E2D9 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541D31B44C5AB00C7E2D9 /* InterfaceController.swift */; };
+		698541D61B44C5AB00C7E2D9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541D51B44C5AB00C7E2D9 /* ExtensionDelegate.swift */; };
+		698541D81B44C5AB00C7E2D9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541D71B44C5AB00C7E2D9 /* NotificationController.swift */; };
+		698541DA1B44C5AB00C7E2D9 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541D91B44C5AB00C7E2D9 /* GlanceController.swift */; };
+		698541DC1B44C5AB00C7E2D9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541DB1B44C5AB00C7E2D9 /* ComplicationController.swift */; };
+		698541DE1B44C5AB00C7E2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		698541AA1B44C5AA00C7E2D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6985418D1B44C5AA00C7E2D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 698541941B44C5AA00C7E2D9;
+			remoteInfo = BuffWatch;
+		};
+		698541B51B44C5AA00C7E2D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6985418D1B44C5AA00C7E2D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 698541941B44C5AA00C7E2D9;
+			remoteInfo = BuffWatch;
+		};
+		698541BF1B44C5AA00C7E2D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6985418D1B44C5AA00C7E2D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 698541BC1B44C5AA00C7E2D9;
+			remoteInfo = "BuffWatch WatchKit App";
+		};
+		698541CE1B44C5AB00C7E2D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6985418D1B44C5AA00C7E2D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 698541CB1B44C5AB00C7E2D9;
+			remoteInfo = "BuffWatch WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		698541E51B44C5AB00C7E2D9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				698541CD1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541E91B44C5AB00C7E2D9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				698541BE1B44C5AA00C7E2D9 /* BuffWatch WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		698541951B44C5AA00C7E2D9 /* BuffWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuffWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		698541981B44C5AA00C7E2D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6985419A1B44C5AA00C7E2D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6985419D1B44C5AA00C7E2D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6985419F1B44C5AA00C7E2D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		698541A21B44C5AA00C7E2D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		698541A41B44C5AA00C7E2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		698541A91B44C5AA00C7E2D9 /* BuffWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuffWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		698541AD1B44C5AA00C7E2D9 /* BuffWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffWatchTests.swift; sourceTree = "<group>"; };
+		698541AF1B44C5AA00C7E2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		698541B41B44C5AA00C7E2D9 /* BuffWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuffWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		698541B81B44C5AA00C7E2D9 /* BuffWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffWatchUITests.swift; sourceTree = "<group>"; };
+		698541BA1B44C5AA00C7E2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		698541BD1B44C5AA00C7E2D9 /* BuffWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BuffWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		698541C31B44C5AA00C7E2D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		698541C51B44C5AA00C7E2D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		698541C71B44C5AA00C7E2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		698541CC1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BuffWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		698541D21B44C5AB00C7E2D9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		698541D31B44C5AB00C7E2D9 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		698541D51B44C5AB00C7E2D9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		698541D71B44C5AB00C7E2D9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		698541D91B44C5AB00C7E2D9 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		698541DB1B44C5AB00C7E2D9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		698541DF1B44C5AB00C7E2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		698541921B44C5AA00C7E2D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541A61B44C5AA00C7E2D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541B11B44C5AA00C7E2D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541C91B44C5AB00C7E2D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6985418C1B44C5AA00C7E2D9 = {
+			isa = PBXGroup;
+			children = (
+				698541971B44C5AA00C7E2D9 /* BuffWatch */,
+				698541AC1B44C5AA00C7E2D9 /* BuffWatchTests */,
+				698541B71B44C5AA00C7E2D9 /* BuffWatchUITests */,
+				698541C11B44C5AA00C7E2D9 /* BuffWatch WatchKit App */,
+				698541D01B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension */,
+				698541961B44C5AA00C7E2D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		698541961B44C5AA00C7E2D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				698541951B44C5AA00C7E2D9 /* BuffWatch.app */,
+				698541A91B44C5AA00C7E2D9 /* BuffWatchTests.xctest */,
+				698541B41B44C5AA00C7E2D9 /* BuffWatchUITests.xctest */,
+				698541BD1B44C5AA00C7E2D9 /* BuffWatch WatchKit App.app */,
+				698541CC1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		698541971B44C5AA00C7E2D9 /* BuffWatch */ = {
+			isa = PBXGroup;
+			children = (
+				698541981B44C5AA00C7E2D9 /* AppDelegate.swift */,
+				6985419A1B44C5AA00C7E2D9 /* ViewController.swift */,
+				6985419C1B44C5AA00C7E2D9 /* Main.storyboard */,
+				6985419F1B44C5AA00C7E2D9 /* Assets.xcassets */,
+				698541A11B44C5AA00C7E2D9 /* LaunchScreen.storyboard */,
+				698541A41B44C5AA00C7E2D9 /* Info.plist */,
+			);
+			path = BuffWatch;
+			sourceTree = "<group>";
+		};
+		698541AC1B44C5AA00C7E2D9 /* BuffWatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				698541AD1B44C5AA00C7E2D9 /* BuffWatchTests.swift */,
+				698541AF1B44C5AA00C7E2D9 /* Info.plist */,
+			);
+			path = BuffWatchTests;
+			sourceTree = "<group>";
+		};
+		698541B71B44C5AA00C7E2D9 /* BuffWatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				698541B81B44C5AA00C7E2D9 /* BuffWatchUITests.swift */,
+				698541BA1B44C5AA00C7E2D9 /* Info.plist */,
+			);
+			path = BuffWatchUITests;
+			sourceTree = "<group>";
+		};
+		698541C11B44C5AA00C7E2D9 /* BuffWatch WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				698541C21B44C5AA00C7E2D9 /* Interface.storyboard */,
+				698541C51B44C5AA00C7E2D9 /* Assets.xcassets */,
+				698541C71B44C5AA00C7E2D9 /* Info.plist */,
+			);
+			path = "BuffWatch WatchKit App";
+			sourceTree = "<group>";
+		};
+		698541D01B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				698541D31B44C5AB00C7E2D9 /* InterfaceController.swift */,
+				698541D51B44C5AB00C7E2D9 /* ExtensionDelegate.swift */,
+				698541D71B44C5AB00C7E2D9 /* NotificationController.swift */,
+				698541D91B44C5AB00C7E2D9 /* GlanceController.swift */,
+				698541DB1B44C5AB00C7E2D9 /* ComplicationController.swift */,
+				698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */,
+				698541DF1B44C5AB00C7E2D9 /* Info.plist */,
+				698541D11B44C5AB00C7E2D9 /* Supporting Files */,
+			);
+			path = "BuffWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		698541D11B44C5AB00C7E2D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				698541D21B44C5AB00C7E2D9 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		698541941B44C5AA00C7E2D9 /* BuffWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 698541EA1B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatch" */;
+			buildPhases = (
+				698541911B44C5AA00C7E2D9 /* Sources */,
+				698541921B44C5AA00C7E2D9 /* Frameworks */,
+				698541931B44C5AA00C7E2D9 /* Resources */,
+				698541E91B44C5AB00C7E2D9 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				698541C01B44C5AA00C7E2D9 /* PBXTargetDependency */,
+			);
+			name = BuffWatch;
+			productName = BuffWatch;
+			productReference = 698541951B44C5AA00C7E2D9 /* BuffWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		698541A81B44C5AA00C7E2D9 /* BuffWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 698541ED1B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatchTests" */;
+			buildPhases = (
+				698541A51B44C5AA00C7E2D9 /* Sources */,
+				698541A61B44C5AA00C7E2D9 /* Frameworks */,
+				698541A71B44C5AA00C7E2D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				698541AB1B44C5AA00C7E2D9 /* PBXTargetDependency */,
+			);
+			name = BuffWatchTests;
+			productName = BuffWatchTests;
+			productReference = 698541A91B44C5AA00C7E2D9 /* BuffWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		698541B31B44C5AA00C7E2D9 /* BuffWatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 698541F01B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatchUITests" */;
+			buildPhases = (
+				698541B01B44C5AA00C7E2D9 /* Sources */,
+				698541B11B44C5AA00C7E2D9 /* Frameworks */,
+				698541B21B44C5AA00C7E2D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				698541B61B44C5AA00C7E2D9 /* PBXTargetDependency */,
+			);
+			name = BuffWatchUITests;
+			productName = BuffWatchUITests;
+			productReference = 698541B41B44C5AA00C7E2D9 /* BuffWatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		698541BC1B44C5AA00C7E2D9 /* BuffWatch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 698541E61B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatch WatchKit App" */;
+			buildPhases = (
+				698541BB1B44C5AA00C7E2D9 /* Resources */,
+				698541E51B44C5AB00C7E2D9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				698541CF1B44C5AB00C7E2D9 /* PBXTargetDependency */,
+			);
+			name = "BuffWatch WatchKit App";
+			productName = "BuffWatch WatchKit App";
+			productReference = 698541BD1B44C5AA00C7E2D9 /* BuffWatch WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		698541CB1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 698541E21B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatch WatchKit Extension" */;
+			buildPhases = (
+				698541C81B44C5AB00C7E2D9 /* Sources */,
+				698541C91B44C5AB00C7E2D9 /* Frameworks */,
+				698541CA1B44C5AB00C7E2D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BuffWatch WatchKit Extension";
+			productName = "BuffWatch WatchKit Extension";
+			productReference = 698541CC1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6985418D1B44C5AA00C7E2D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Appsilog;
+				TargetAttributes = {
+					698541941B44C5AA00C7E2D9 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					698541A81B44C5AA00C7E2D9 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 698541941B44C5AA00C7E2D9;
+					};
+					698541B31B44C5AA00C7E2D9 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 698541941B44C5AA00C7E2D9;
+					};
+					698541BC1B44C5AA00C7E2D9 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					698541CB1B44C5AB00C7E2D9 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 698541901B44C5AA00C7E2D9 /* Build configuration list for PBXProject "BuffWatch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6985418C1B44C5AA00C7E2D9;
+			productRefGroup = 698541961B44C5AA00C7E2D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				698541941B44C5AA00C7E2D9 /* BuffWatch */,
+				698541A81B44C5AA00C7E2D9 /* BuffWatchTests */,
+				698541B31B44C5AA00C7E2D9 /* BuffWatchUITests */,
+				698541BC1B44C5AA00C7E2D9 /* BuffWatch WatchKit App */,
+				698541CB1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		698541931B44C5AA00C7E2D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698541A31B44C5AA00C7E2D9 /* LaunchScreen.storyboard in Resources */,
+				698541A01B44C5AA00C7E2D9 /* Assets.xcassets in Resources */,
+				6985419E1B44C5AA00C7E2D9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541A71B44C5AA00C7E2D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541B21B44C5AA00C7E2D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541BB1B44C5AA00C7E2D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698541C61B44C5AA00C7E2D9 /* Assets.xcassets in Resources */,
+				698541C41B44C5AA00C7E2D9 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541CA1B44C5AB00C7E2D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698541DE1B44C5AB00C7E2D9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		698541911B44C5AA00C7E2D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6985419B1B44C5AA00C7E2D9 /* ViewController.swift in Sources */,
+				698541991B44C5AA00C7E2D9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541A51B44C5AA00C7E2D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698541AE1B44C5AA00C7E2D9 /* BuffWatchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541B01B44C5AA00C7E2D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698541B91B44C5AA00C7E2D9 /* BuffWatchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698541C81B44C5AB00C7E2D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698541D81B44C5AB00C7E2D9 /* NotificationController.swift in Sources */,
+				698541D61B44C5AB00C7E2D9 /* ExtensionDelegate.swift in Sources */,
+				698541DC1B44C5AB00C7E2D9 /* ComplicationController.swift in Sources */,
+				698541D41B44C5AB00C7E2D9 /* InterfaceController.swift in Sources */,
+				698541DA1B44C5AB00C7E2D9 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		698541AB1B44C5AA00C7E2D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 698541941B44C5AA00C7E2D9 /* BuffWatch */;
+			targetProxy = 698541AA1B44C5AA00C7E2D9 /* PBXContainerItemProxy */;
+		};
+		698541B61B44C5AA00C7E2D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 698541941B44C5AA00C7E2D9 /* BuffWatch */;
+			targetProxy = 698541B51B44C5AA00C7E2D9 /* PBXContainerItemProxy */;
+		};
+		698541C01B44C5AA00C7E2D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 698541BC1B44C5AA00C7E2D9 /* BuffWatch WatchKit App */;
+			targetProxy = 698541BF1B44C5AA00C7E2D9 /* PBXContainerItemProxy */;
+		};
+		698541CF1B44C5AB00C7E2D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 698541CB1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension */;
+			targetProxy = 698541CE1B44C5AB00C7E2D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6985419C1B44C5AA00C7E2D9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6985419D1B44C5AA00C7E2D9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		698541A11B44C5AA00C7E2D9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				698541A21B44C5AA00C7E2D9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		698541C21B44C5AA00C7E2D9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				698541C31B44C5AA00C7E2D9 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		698541E01B44C5AB00C7E2D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		698541E11B44C5AB00C7E2D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		698541E31B44C5AB00C7E2D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "BuffWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		698541E41B44C5AB00C7E2D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "BuffWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		698541E71B44C5AB00C7E2D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = BuffWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "BuffWatch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		698541E81B44C5AB00C7E2D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = BuffWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "BuffWatch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		698541EB1B44C5AB00C7E2D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BuffWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		698541EC1B44C5AB00C7E2D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BuffWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		698541EE1B44C5AB00C7E2D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BuffWatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuffWatch.app/BuffWatch";
+			};
+			name = Debug;
+		};
+		698541EF1B44C5AB00C7E2D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BuffWatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuffWatch.app/BuffWatch";
+			};
+			name = Release;
+		};
+		698541F11B44C5AB00C7E2D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BuffWatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BuffWatch;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		698541F21B44C5AB00C7E2D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BuffWatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BuffWatch;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		698541901B44C5AA00C7E2D9 /* Build configuration list for PBXProject "BuffWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698541E01B44C5AB00C7E2D9 /* Debug */,
+				698541E11B44C5AB00C7E2D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		698541E21B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698541E31B44C5AB00C7E2D9 /* Debug */,
+				698541E41B44C5AB00C7E2D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		698541E61B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698541E71B44C5AB00C7E2D9 /* Debug */,
+				698541E81B44C5AB00C7E2D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		698541EA1B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698541EB1B44C5AB00C7E2D9 /* Debug */,
+				698541EC1B44C5AB00C7E2D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		698541ED1B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698541EE1B44C5AB00C7E2D9 /* Debug */,
+				698541EF1B44C5AB00C7E2D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		698541F01B44C5AB00C7E2D9 /* Build configuration list for PBXNativeTarget "BuffWatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698541F11B44C5AB00C7E2D9 /* Debug */,
+				698541F21B44C5AB00C7E2D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6985418D1B44C5AA00C7E2D9 /* Project object */;
+}
