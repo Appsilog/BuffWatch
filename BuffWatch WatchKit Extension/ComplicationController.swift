@@ -60,22 +60,42 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         var template: CLKComplicationTemplate? = nil
         switch complication.family {
         case .ModularSmall:
-            let modSmallTemp = CLKComplicationTemplateModularSmallSimpleImage()
+            
+////          CLKComplicationTemplateModularSmallSimpleImage
+////          Just displays the buffer logo
+//            let modSmallTemp = CLKComplicationTemplateModularSmallSimpleImage()
+//            let bufferImage = UIImage(named: "Complication/Modular")
+//            let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
+//            
+//            modSmallTemp.imageProvider = line1Image
+//            
+//            template = modSmallTemp
+//
+            
+////          CLKComplicationTemplateModularSmallSimpleText
+////          Shows how many left pending
+//            let modSmallTemp = CLKComplicationTemplateModularSmallSimpleText()
+//            modSmallTemp.textProvider = CLKSimpleTextProvider(text: "--")
+//            
+//            template = modSmallTemp
+            
+            
+////            CLKComplicationTemplateModularSmallStackImage
+////            Shows buffer image and next post time
+            let modTemp     = CLKComplicationTemplateModularSmallStackImage()
+            
             let bufferImage = UIImage(named: "Complication/Modular")
             let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
+
+            let date = NSDate()
+            let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+            let newDate = cal!.startOfDayForDate(date)
+            let line2   = CLKTimeTextProvider(date: newDate)
             
-            modSmallTemp.imageProvider = line1Image
+            modTemp.line1ImageProvider = line1Image
+            modTemp.line2TextProvider = line2
             
-            template = modSmallTemp
-//            
-//            let modTemp     = CLKComplicationTemplateModularSmallStackImage()
-//            
-//            let line2       = CLKSimpleTextProvider(text: "12:12")
-//            
-//            modTemp.line1ImageProvider = line1Image
-//            modTemp.line2TextProvider = line2
-//            
-//            template        = modTemp
+            template        = modTemp
             
         case .ModularLarge:
           template = nil
@@ -122,4 +142,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
     }
     
+    func getPendingCount() -> Int{
+        return 25
+    }
 }
