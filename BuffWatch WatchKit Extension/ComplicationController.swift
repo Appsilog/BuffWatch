@@ -18,11 +18,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        handler(nil)
+        handler(NSDate())
     }
     
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        handler(nil)
+       handler(NSDate())
     }
     
     func getPrivacyBehaviorForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
@@ -43,29 +43,83 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries after to the given date
-        handler(nil)
+        handler([])
     }
     
     // MARK: - Update Scheduling
     
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-        handler(nil)
+        handler(NSDate(timeIntervalSinceNow: 60*60))
     }
     
     // MARK: - Placeholder Templates
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
+        var template: CLKComplicationTemplate? = nil
         switch complication.family {
+        case .ModularSmall:
+            let modSmallTemp = CLKComplicationTemplateModularSmallSimpleImage()
+            let bufferImage = UIImage(named: "Complication/Modular")
+            let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
+            
+            modSmallTemp.imageProvider = line1Image
+            
+            template = modSmallTemp
+//            
+//            let modTemp     = CLKComplicationTemplateModularSmallStackImage()
+//            
+//            let line2       = CLKSimpleTextProvider(text: "12:12")
+//            
+//            modTemp.line1ImageProvider = line1Image
+//            modTemp.line2TextProvider = line2
+//            
+//            template        = modTemp
+            
+        case .ModularLarge:
+          template = nil
+//            let modularLargeTemplate: CLKComplicationTemplateModularLargeStandardBody = CLKComplicationTemplateModularLargeStandardBody()
+//            
+//            // buffer logo
+//            let bufferImage = UIImage(named: "Modular")
+//            let imageProvider = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.blackColor())
+//            
+//            // timestamp
+////            let postDate: NSDate = NSDate()
+////            let units: NSCalendarUnit = [.Hour, .Minute]
+////            let style: CLKRelativeDateStyle = .Natural
+//            //let postDateTextProvider = CLKRelativeDateTextProvider(date: postDate, style: style, units: units)
+//          let postDateTextProvider = CLKSimpleTextProvider(text: "123")
+//            // short text
+//            let b1TextProvider = CLKSimpleTextProvider(text: "----")
+//            let b2TextProvider = CLKSimpleTextProvider(text: "----")
+//            
+//            modularLargeTemplate.headerImageProvider = imageProvider
+//          
+//            modularLargeTemplate.headerTextProvider = postDateTextProvider
+//            modularLargeTemplate.body1TextProvider = b1TextProvider
+//            modularLargeTemplate.body2TextProvider = b2TextProvider
+//            
+//            template = modularLargeTemplate
+//         
+
+        case .UtilitarianSmall:
+            template = nil
         case .UtilitarianLarge:
-            let template: CLKComplicationTemplateUtilitarianLargeFlat = CLKComplicationTemplateUtilitarianLargeFlat()
-            let simpleTextProvider: CLKSimpleTextProvider = CLKSimpleTextProvider(text: "Hello World")
-            template.textProvider = simpleTextProvider
-            handler(template)
-        default:
-            handler(nil)
+            template = nil
+        case .CircularSmall:
+            template = nil
+//            let modularTemplate = CLKComplicationTemplateCircularSmallRingText()
+//            modularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
+//            modularTemplate.fillFraction = 0.7
+//            modularTemplate.ringStyle = CLKComplicationRingStyle.Closed
+//            template = modularTemplate
+            
         }
+        handler(template)
+        
+        
     }
     
 }
