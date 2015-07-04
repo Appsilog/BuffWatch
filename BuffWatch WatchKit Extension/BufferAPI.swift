@@ -40,7 +40,7 @@ class BufferAPI{
   
     
     func updateData(){
-        let url = NSURL(string: "https://api.bufferapp.com/1/profiles/55826fd2b0849f1104c7cea7/updates/pending.json?access_token=1/b4e2517d3a7b782c614cd37cc9abb518")
+        let url = NSURL(string: "https://api.bufferapp.com/1/profiles//updates/pending.json?access_token=")
         let session = NSURLSession.sharedSession()
         session.dataTaskWithURL(url!) { (data, response, error) -> Void in
             print(data, appendNewline: true)
