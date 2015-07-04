@@ -11,6 +11,8 @@ import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
+    let bufferData = BufferAPI.sharedInstance
+    
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
@@ -55,6 +57,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Placeholder Templates
     
+//    func getNextPendingUpdate(fromDate date: NSDate) -> Update{
+//        let calendar = NSCalendar.currentCalendar()
+//       return
+//    }
+    
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
         var template: CLKComplicationTemplate? = nil
@@ -98,9 +105,40 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template        = modTemp
             
         case .ModularLarge:
-          template = nil
-//            let modularLargeTemplate: CLKComplicationTemplateModularLargeStandardBody = CLKComplicationTemplateModularLargeStandardBody()
+////            CLKComplicationTemplateModularLargeTallBody
+////            Shows time of next post and brief text in LARGE TEXT
+//            let modularLargeTemplate = CLKComplicationTemplateModularLargeTallBody()
+//            let date = NSDate()
+//            let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+//            let newDate = cal!.startOfDayForDate(date)
+//            let headerText   = CLKTimeTextProvider(date: newDate)
+//
+//            modularLargeTemplate.headerTextProvider = headerText
+//            modularLargeTemplate.bodyTextProvider = CLKSimpleTextProvider(text: "this is just a test to see how long this text will be")
 //            
+//            template = modularLargeTemplate
+            
+            
+////            CLKComplicationTemplateModularLargeStandardBody
+////            shows logo, time of next post and text
+                let modularLargeTemplate = CLKComplicationTemplateModularLargeStandardBody()
+                let date = NSDate()
+                let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+                let newDate = cal!.startOfDayForDate(date)
+                let headerText   = CLKTimeTextProvider(date: newDate)
+    
+                let bufferImage = UIImage(named: "Complication/Modular")
+                let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
+                
+                modularLargeTemplate.headerImageProvider = line1Image
+                modularLargeTemplate.headerTextProvider = headerText
+                modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: "this is just a test to see how long this text will be")
+                
+                
+                template = modularLargeTemplate
+            
+
+//
 //            // buffer logo
 //            let bufferImage = UIImage(named: "Modular")
 //            let imageProvider = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.blackColor())
