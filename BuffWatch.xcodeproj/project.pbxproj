@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		693F04BE1B4731C90010C66B /* BufferAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F04BD1B4731C90010C66B /* BufferAPI.swift */; };
 		693F04C01B47322B0010C66B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F04BF1B47322B0010C66B /* Post.swift */; };
+		6957A72C1B4784E300E7D517 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957A72B1B4784E300E7D517 /* Constants.swift */; };
 		6974897E1B473F3D005A18EF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6974897D1B473F3D005A18EF /* Profile.swift */; };
 		697489821B4769E6005A18EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697489811B4769E6005A18EF /* User.swift */; };
 		697489841B477BD5005A18EF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697489831B477BD5005A18EF /* Schedule.swift */; };
@@ -30,6 +31,7 @@
 		698541DA1B44C5AB00C7E2D9 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541D91B44C5AB00C7E2D9 /* GlanceController.swift */; };
 		698541DC1B44C5AB00C7E2D9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541DB1B44C5AB00C7E2D9 /* ComplicationController.swift */; };
 		698541DE1B44C5AB00C7E2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */; };
+		69D11F221B4A1FE4004176DC /* JSONCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D11F211B4A1FE4004176DC /* JSONCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,7 @@
 /* Begin PBXFileReference section */
 		693F04BD1B4731C90010C66B /* BufferAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAPI.swift; sourceTree = "<group>"; };
 		693F04BF1B47322B0010C66B /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		6957A72B1B4784E300E7D517 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6974897D1B473F3D005A18EF /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		697489811B4769E6005A18EF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		697489831B477BD5005A18EF /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		698541DB1B44C5AB00C7E2D9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		698541DF1B44C5AB00C7E2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69D11F211B4A1FE4004176DC /* JSONCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,16 +167,10 @@
 				693F04BF1B47322B0010C66B /* Post.swift */,
 				697489811B4769E6005A18EF /* User.swift */,
 				697489831B477BD5005A18EF /* Schedule.swift */,
-				697489801B4769D4005A18EF /* Model */,
+				6957A72B1B4784E300E7D517 /* Constants.swift */,
+				69D11F211B4A1FE4004176DC /* JSONCodable.swift */,
 			);
 			name = BufferAPI;
-			sourceTree = "<group>";
-		};
-		697489801B4769D4005A18EF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		6985418C1B44C5AA00C7E2D9 = {
@@ -493,7 +491,9 @@
 				697489821B4769E6005A18EF /* User.swift in Sources */,
 				698541D41B44C5AB00C7E2D9 /* InterfaceController.swift in Sources */,
 				698541DA1B44C5AB00C7E2D9 /* GlanceController.swift in Sources */,
+				69D11F221B4A1FE4004176DC /* JSONCodable.swift in Sources */,
 				697489841B477BD5005A18EF /* Schedule.swift in Sources */,
+				6957A72C1B4784E300E7D517 /* Constants.swift in Sources */,
 				693F04BE1B4731C90010C66B /* BufferAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

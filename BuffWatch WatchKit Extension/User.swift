@@ -9,21 +9,18 @@
 import Foundation
 
 struct User{
-    let activity_at: NSDate
-    let created_at: NSDate
-    let id: String
-    let timeZone: String
-    
-    
+    var activity_at:    Double?
+    var created_at:     Double?
+    var id:             String?
+    var timeZone:       String?
 }
 
-// BufferAPI.sharedInstance.profiles()
-// BufferAPI.sharedInstance.profiles(id: "1212121312")
-// BufferAPI.sharedInstance.profiles(id: "12312412432").getSchedules(){
-// }
 
-
-
-// bufferAPI.sharedInstance.updates(id: "12124213").getInteractions()
-// bufferAPI.sharedInstance.profiles(id: "1231341").getPending()
-// bufferAPI.sharedInstance.profiles(id: "1231213").getSent()
+extension User: JSONDecodable{
+    mutating func JSONDecode(JSONDictionary: [String : AnyObject]) {
+        JSONDictionary.restore(&activity_at, key: "activity_at")
+        JSONDictionary.restore(&created_at, key: "created_at")
+        JSONDictionary.restore(&id, key: "id")
+        JSONDictionary.restore(&timeZone, key: "timeZone")
+    }
+}

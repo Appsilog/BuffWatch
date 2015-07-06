@@ -11,7 +11,7 @@ import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
-    let bufferData = BufferAPI.sharedInstance
+    let bufferData = BufferAPI()
     
     // MARK: - Timeline Configuration
     
