@@ -25,7 +25,6 @@
 		698541DA1B44C5AB00C7E2D9 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541D91B44C5AB00C7E2D9 /* GlanceController.swift */; };
 		698541DC1B44C5AB00C7E2D9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541DB1B44C5AB00C7E2D9 /* ComplicationController.swift */; };
 		698541DE1B44C5AB00C7E2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */; };
-		69C3990D1B4B7C11006DB64C /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69C3990C1B4B7C11006DB64C /* ApiKeys.plist */; };
 		69D11F221B4A1FE4004176DC /* JSONCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D11F211B4A1FE4004176DC /* JSONCodable.swift */; };
 /* End PBXBuildFile section */
 
@@ -113,7 +112,6 @@
 		698541DB1B44C5AB00C7E2D9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		698541DF1B44C5AB00C7E2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69C3990C1B4B7C11006DB64C /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		69D11F211B4A1FE4004176DC /* JSONCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,7 +241,6 @@
 				698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */,
 				698541DF1B44C5AB00C7E2D9 /* Info.plist */,
 				698541D11B44C5AB00C7E2D9 /* Supporting Files */,
-				69C3990C1B4B7C11006DB64C /* ApiKeys.plist */,
 			);
 			path = "BuffWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -449,7 +446,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				698541DE1B44C5AB00C7E2D9 /* Assets.xcassets in Resources */,
-				69C3990D1B4B7C11006DB64C /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
