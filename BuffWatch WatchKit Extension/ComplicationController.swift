@@ -35,11 +35,28 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         
-        bufferData.get() { (posts, error) -> Void in
-            
-        }
+        let modularLargeTemplate = CLKComplicationTemplateModularLargeStandardBody()
+        let date = NSDate()
+        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let newDate = cal!.startOfDayForDate(date)
+        let headerText   = CLKTimeTextProvider(date: newDate)
+        
+        let bufferImage = UIImage(named: "Complication/Modular")
+        let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
+        
+        modularLargeTemplate.headerImageProvider = line1Image
+        modularLargeTemplate.headerTextProvider = headerText
+        modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: "template ")
+        
+        let entry = CLKComplicationTimelineEntry(date: newDate, complicationTemplate: modularLargeTemplate)
+        
         // Call the handler with the current timeline entry
-        handler(nil)
+        handler(entry)
+        bufferData.get() { (posts, error) -> Void in
+           
+  
+        }
+       
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
