@@ -34,6 +34,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
+        
+        bufferData.get() { (posts, error) -> Void in
+            
+        }
         // Call the handler with the current timeline entry
         handler(nil)
     }

@@ -8,40 +8,48 @@
 
 import Foundation
 
-extension NSURLSession {
-    class func fetchDataFromURL(url: NSURL, completionHandler: (NSData) -> ()) -> NSURLSessionDataTask {
-        return self.sharedSession().dataTaskWithURL(url) { data, _, _ in
-            if let actualData = data {
-                completionHandler(actualData)
-            }
-        }!
-    }
+
+struct Post{
+    var id: String?
+    var due_at: Double?
+    var due_time: Double?
+    var profile_id: String?
+    var profile_service: String?
+    var text: String?
+    var text_formatted: String?
+    var user_id: String?
+    
 }
+
+
 
 class BufferAPI: NSObject{
     
-    let CONSTANTS = Constants()
-    
-    
-    func getPending(completion: (posts: [Post], error: NSError?) -> Void) {
-        
-        let url = NSURL(string: Constants.UPDATES_PENDING)
-        let session = NSURLSession.sharedSession()
-        
-        session.dataTaskWithURL(url!) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+    func get(completionHandler: ((NSArray!, NSError!) -> Void)!) -> Void {
+        let url: NSURL = NSURL(string: "https://api.bufferapp.com/1/profiles/\(getProfileId())/updates/pending?access_token=\(getToken())")!
+        let ses = NSURLSession.sharedSession()
+        let task = ses.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
+            if (error != nil) {
+                return completionHandler(nil, error)
+            }
             
-            
-            let jsonError: NSError?
-            let jsonData: NSData = data!
-           
-            let jsonDict = NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-            
-            let JSONData = Post(JSONDictionary: jsonDict)
-            print(data, appendNewline: true)
-            
-        }
-        
+            do{
+               
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                
+                if (error != nil) {
+                    return completionHandler(nil, error)
+                } else {
+                    return completionHandler(json["results"] as! [NSDictionary], nil)
+                }
+            }catch {
+                
+            }
+        })
+        task!.resume()
     }
+    
+    
     
     func getSent(){
         
@@ -53,10 +61,14 @@ class BufferAPI: NSObject{
         let plist = NSDictionary(contentsOfFile: filePath!)
         
         let value: String = plist?.objectForKey(keyname) as! String
-        
         return value
         
     }
+    
+    func getProfileId() -> NSString {
+        return valueForAPIKey("profile_id")
+    }
+    
     func getToken() -> NSString{
        
         return valueForAPIKey("user_token")
