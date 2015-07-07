@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		693F04BE1B4731C90010C66B /* BufferAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F04BD1B4731C90010C66B /* BufferAPI.swift */; };
-		697489861B4780BE005A18EF /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 697489851B4780BE005A18EF /* ApiKeys.plist */; };
 		698541991B44C5AA00C7E2D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541981B44C5AA00C7E2D9 /* AppDelegate.swift */; };
 		6985419B1B44C5AA00C7E2D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985419A1B44C5AA00C7E2D9 /* ViewController.swift */; };
 		6985419E1B44C5AA00C7E2D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6985419C1B44C5AA00C7E2D9 /* Main.storyboard */; };
@@ -26,6 +25,7 @@
 		698541DA1B44C5AB00C7E2D9 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541D91B44C5AB00C7E2D9 /* GlanceController.swift */; };
 		698541DC1B44C5AB00C7E2D9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541DB1B44C5AB00C7E2D9 /* ComplicationController.swift */; };
 		698541DE1B44C5AB00C7E2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */; };
+		69C3990D1B4B7C11006DB64C /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69C3990C1B4B7C11006DB64C /* ApiKeys.plist */; };
 		69D11F221B4A1FE4004176DC /* JSONCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D11F211B4A1FE4004176DC /* JSONCodable.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +87,6 @@
 
 /* Begin PBXFileReference section */
 		693F04BD1B4731C90010C66B /* BufferAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAPI.swift; sourceTree = "<group>"; };
-		697489851B4780BE005A18EF /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		698541951B44C5AA00C7E2D9 /* BuffWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuffWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698541981B44C5AA00C7E2D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6985419A1B44C5AA00C7E2D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,10 +113,18 @@
 		698541DB1B44C5AB00C7E2D9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		698541DF1B44C5AB00C7E2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69C3990C1B4B7C11006DB64C /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		69D11F211B4A1FE4004176DC /* JSONCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		309A07ECFA12A2B4AB9ACA8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		698541921B44C5AA00C7E2D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +174,7 @@
 				698541C11B44C5AA00C7E2D9 /* BuffWatch WatchKit App */,
 				698541D01B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension */,
 				698541961B44C5AA00C7E2D9 /* Products */,
+				E214B71AEAA4A2FF2B2DBD49 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,7 +243,7 @@
 				698541DD1B44C5AB00C7E2D9 /* Assets.xcassets */,
 				698541DF1B44C5AB00C7E2D9 /* Info.plist */,
 				698541D11B44C5AB00C7E2D9 /* Supporting Files */,
-				697489851B4780BE005A18EF /* ApiKeys.plist */,
+				69C3990C1B4B7C11006DB64C /* ApiKeys.plist */,
 			);
 			path = "BuffWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -246,6 +254,13 @@
 				698541D21B44C5AB00C7E2D9 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E214B71AEAA4A2FF2B2DBD49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +327,7 @@
 			buildPhases = (
 				698541BB1B44C5AA00C7E2D9 /* Resources */,
 				698541E51B44C5AB00C7E2D9 /* Embed App Extensions */,
+				309A07ECFA12A2B4AB9ACA8B /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -346,6 +362,7 @@
 		6985418D1B44C5AA00C7E2D9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Appsilog;
 				TargetAttributes = {
@@ -432,7 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				698541DE1B44C5AB00C7E2D9 /* Assets.xcassets in Resources */,
-				697489861B4780BE005A18EF /* ApiKeys.plist in Resources */,
+				69C3990D1B4B7C11006DB64C /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

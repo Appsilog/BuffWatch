@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Post{
     var id: String?
     var due_at: Double?
@@ -25,7 +24,10 @@ struct Post{
 
 class BufferAPI: NSObject{
     
+    
     func get(completionHandler: ((NSArray!, NSError!) -> Void)!) -> Void {
+        
+        
         let url: NSURL = NSURL(string: "https://api.bufferapp.com/1/profiles/\(getProfileId())/updates/pending?access_token=\(getToken())")!
         let ses = NSURLSession.sharedSession()
         let task = ses.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
@@ -40,7 +42,7 @@ class BufferAPI: NSObject{
                 if (error != nil) {
                     return completionHandler(nil, error)
                 } else {
-                    return completionHandler(json["results"] as! [NSDictionary], nil)
+                    return completionHandler(json["updates"] as! [NSDictionary], nil)
                 }
             }catch {
                 

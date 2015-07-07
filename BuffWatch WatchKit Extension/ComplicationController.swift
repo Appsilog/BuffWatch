@@ -53,7 +53,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // Call the handler with the current timeline entry
         handler(entry)
         bufferData.get() { (posts, error) -> Void in
-           
+           print(posts!)
   
         }
        
