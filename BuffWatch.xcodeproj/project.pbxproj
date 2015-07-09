@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6906C1651B4E2E6D00CD7CB1 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6906C1641B4E2E6D00CD7CB1 /* ApiKeys.plist */; };
 		693F04BE1B4731C90010C66B /* BufferAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F04BD1B4731C90010C66B /* BufferAPI.swift */; };
 		698541991B44C5AA00C7E2D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541981B44C5AA00C7E2D9 /* AppDelegate.swift */; };
 		6985419B1B44C5AA00C7E2D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985419A1B44C5AA00C7E2D9 /* ViewController.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6906C1641B4E2E6D00CD7CB1 /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		693F04BD1B4731C90010C66B /* BufferAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAPI.swift; sourceTree = "<group>"; };
 		698541951B44C5AA00C7E2D9 /* BuffWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuffWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698541981B44C5AA00C7E2D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		698541D01B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6906C1641B4E2E6D00CD7CB1 /* ApiKeys.plist */,
 				6974897F1B4769CC005A18EF /* BufferAPI */,
 				698541D31B44C5AB00C7E2D9 /* InterfaceController.swift */,
 				698541D51B44C5AB00C7E2D9 /* ExtensionDelegate.swift */,
@@ -446,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				698541DE1B44C5AB00C7E2D9 /* Assets.xcassets in Resources */,
+				6906C1651B4E2E6D00CD7CB1 /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,7 +677,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -691,7 +695,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.appsilog.BuffWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};

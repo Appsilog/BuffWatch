@@ -12,37 +12,46 @@ struct Post{
     var id: String?
     var due_at: Double?
     var due_time: Double?
-    var profile_id: String?
-    var profile_service: String?
     var text: String?
-    var text_formatted: String?
-    var user_id: String?
     
 }
 
 
 
 class BufferAPI: NSObject{
+    typealias CompletionPostBlock = (post: [Post]?, error: NSError?) -> ()
+
     
-    
-    func get(completionHandler: ((NSArray!, NSError!) -> Void)!) -> Void {
+    func get(completionHandler: CompletionPostBlock) {
         
         
-        let url: NSURL = NSURL(string: "https://api.bufferapp.com/1/profiles/\(getProfileId())/updates/pending?access_token=\(getToken())")!
+        let url: NSURL = NSURL(string: "https://api.bufferapp.com/1/profiles/\(getProfileId())/updates/pending.json?access_token=\(getToken())")!
+        print(url)
         let ses = NSURLSession.sharedSession()
         let task = ses.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
             if (error != nil) {
-                return completionHandler(nil, error)
+                return completionHandler(post: nil, error: error)
             }
             
             do{
                
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                let updates = json["updates"] as? [NSDictionary]
+                var posts = [Post]()
+                
+                if let updates = updates {
+                    for update in updates {
+                        posts.append(Post(  id: update["id"] as? String,
+                                            due_at: update["due_at"] as? Double,
+                                            due_time: update["due_time"] as? Double,
+                                            text: update["text"] as? String))
+                    }
+                }
                 
                 if (error != nil) {
-                    return completionHandler(nil, error)
+                    return completionHandler(post: nil, error: error)
                 } else {
-                    return completionHandler(json["updates"] as! [NSDictionary], nil)
+                    return completionHandler(post: posts, error: nil)
                 }
             }catch {
                 

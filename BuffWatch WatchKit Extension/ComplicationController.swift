@@ -13,6 +13,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     let bufferData = BufferAPI()
     
+    var posts: [Post]?
+    
+    
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
@@ -35,27 +38,35 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         
-        let modularLargeTemplate = CLKComplicationTemplateModularLargeStandardBody()
-        let date = NSDate()
-        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let newDate = cal!.startOfDayForDate(date)
-        let headerText   = CLKTimeTextProvider(date: newDate)
-        
-        let bufferImage = UIImage(named: "Complication/Modular")
-        let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
-        
-        modularLargeTemplate.headerImageProvider = line1Image
-        modularLargeTemplate.headerTextProvider = headerText
-        modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: "template ")
-        
-        let entry = CLKComplicationTimelineEntry(date: newDate, complicationTemplate: modularLargeTemplate)
-        
-        // Call the handler with the current timeline entry
-        handler(entry)
-        bufferData.get() { (posts, error) -> Void in
-           print(posts!)
-  
+        bufferData.get() { (postsData, error) -> Void in
+            self.posts = postsData
+            
+            let post = self.posts![0]
+            
+            
+            let modularLargeTemplate = CLKComplicationTemplateModularLargeStandardBody()
+            let date = NSDate(timeIntervalSince1970: post.due_at!)
+            let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+            let newDate = cal!.startOfDayForDate(date)
+            let headerText   = CLKTimeTextProvider(date: newDate)
+            
+            let bufferImage = UIImage(named: "Complication/Modular")
+            let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
+            
+            modularLargeTemplate.headerImageProvider = line1Image
+            modularLargeTemplate.headerTextProvider = headerText
+            modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: post.text!)
+            
+            let entry = CLKComplicationTimelineEntry(date: newDate, complicationTemplate: modularLargeTemplate)
+            
+            // Call the handler with the current timeline entry
+            handler(entry)
+
+            
         }
+        
+        
+        
        
     }
     
