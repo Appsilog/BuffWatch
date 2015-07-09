@@ -46,9 +46,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             
             let modularLargeTemplate = CLKComplicationTemplateModularLargeStandardBody()
             let date = NSDate(timeIntervalSince1970: post.due_at!)
-            let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-            let newDate = cal!.startOfDayForDate(date)
-            let headerText   = CLKTimeTextProvider(date: newDate)
+         
+            let headerText   = CLKTimeTextProvider(date: date)
             
             let bufferImage = UIImage(named: "Complication/Modular")
             let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
@@ -57,7 +56,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             modularLargeTemplate.headerTextProvider = headerText
             modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: post.text!)
             
-            let entry = CLKComplicationTimelineEntry(date: newDate, complicationTemplate: modularLargeTemplate)
+            let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: modularLargeTemplate)
             
             // Call the handler with the current timeline entry
             handler(entry)
@@ -77,7 +76,35 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries after to the given date
-        handler([])
+        var entries: [CLKComplicationTimelineEntry] = []
+        
+        for post in self.posts!
+        {
+            let startDate = NSDate(timeIntervalSince1970: post.due_at!)
+            print(startDate.timeIntervalSinceDate(date))
+            if entries.count < limit && startDate.timeIntervalSinceDate(date) > 0
+            {
+                
+                let modularLargeTemplate = CLKComplicationTemplateModularLargeStandardBody()
+                let date = NSDate(timeIntervalSince1970: post.due_at!)
+                let headerText   = CLKTimeTextProvider(date: date)
+                
+                let bufferImage = UIImage(named: "Complication/Modular")
+                let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
+                
+                modularLargeTemplate.headerImageProvider = line1Image
+                modularLargeTemplate.headerTextProvider = headerText
+                modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: post.text!)
+                
+                let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: modularLargeTemplate)
+
+                entries.append(entry)
+            }
+        }
+        
+        handler(entries)
+        
+      
     }
     
     // MARK: - Update Scheduling
@@ -89,10 +116,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Placeholder Templates
     
-//    func getNextPendingUpdate(fromDate date: NSDate) -> Update{
-//        let calendar = NSCalendar.currentCalendar()
-//       return
-//    }
+
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
