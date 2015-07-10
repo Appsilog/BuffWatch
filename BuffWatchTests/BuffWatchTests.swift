@@ -7,8 +7,31 @@
 //
 
 import XCTest
+import Foundation
+@testable import BuffWatch
 
 class BuffWatchTests: XCTestCase {
+    let buffer = BufferAPI()
+    
+    func testGetPending(){
+        
+        
+        let bundle = NSBundle(forClass: self.classForCoder)
+        let path = bundle.pathForResource("pending", ofType: "json")
+        let url: NSURL = NSURL(fileURLWithPath: path!)
+        let jsonData: NSData = NSData(contentsOfURL: url)!
+        
+        do{
+            let json = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+            let updates = json["updates"] as? [NSDictionary]
+            XCTAssertTrue(buffer.populatePosts(updates).count > 0)
+        }catch{
+            
+        }
+        
+    }
+    
+  
     
     override func setUp() {
         super.setUp()

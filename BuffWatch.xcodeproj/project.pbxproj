@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6906C1651B4E2E6D00CD7CB1 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6906C1641B4E2E6D00CD7CB1 /* ApiKeys.plist */; };
 		693F04BE1B4731C90010C66B /* BufferAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F04BD1B4731C90010C66B /* BufferAPI.swift */; };
+		69799D641B4F37D900E2B083 /* BufferAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F04BD1B4731C90010C66B /* BufferAPI.swift */; };
+		69799D661B4F3AA500E2B083 /* pending.json in Resources */ = {isa = PBXBuildFile; fileRef = 69799D651B4F3AA500E2B083 /* pending.json */; };
+		69799D681B4F573000E2B083 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69799D671B4F573000E2B083 /* FakeData.swift */; };
 		698541991B44C5AA00C7E2D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541981B44C5AA00C7E2D9 /* AppDelegate.swift */; };
 		6985419B1B44C5AA00C7E2D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985419A1B44C5AA00C7E2D9 /* ViewController.swift */; };
 		6985419E1B44C5AA00C7E2D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6985419C1B44C5AA00C7E2D9 /* Main.storyboard */; };
@@ -30,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		69799D621B4F361B00E2B083 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6985418D1B44C5AA00C7E2D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 698541CB1B44C5AB00C7E2D9;
+			remoteInfo = "BuffWatch WatchKit Extension";
+		};
 		698541AA1B44C5AA00C7E2D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6985418D1B44C5AA00C7E2D9 /* Project object */;
@@ -88,6 +98,8 @@
 /* Begin PBXFileReference section */
 		6906C1641B4E2E6D00CD7CB1 /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		693F04BD1B4731C90010C66B /* BufferAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferAPI.swift; sourceTree = "<group>"; };
+		69799D651B4F3AA500E2B083 /* pending.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pending.json; sourceTree = SOURCE_ROOT; };
+		69799D671B4F573000E2B083 /* FakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 		698541951B44C5AA00C7E2D9 /* BuffWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuffWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698541981B44C5AA00C7E2D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6985419A1B44C5AA00C7E2D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 			children = (
 				693F04BD1B4731C90010C66B /* BufferAPI.swift */,
 				69D11F211B4A1FE4004176DC /* JSONCodable.swift */,
+				69799D671B4F573000E2B083 /* FakeData.swift */,
 			);
 			name = BufferAPI;
 			sourceTree = "<group>";
@@ -206,6 +219,7 @@
 		698541AC1B44C5AA00C7E2D9 /* BuffWatchTests */ = {
 			isa = PBXGroup;
 			children = (
+				69799D651B4F3AA500E2B083 /* pending.json */,
 				698541AD1B44C5AA00C7E2D9 /* BuffWatchTests.swift */,
 				698541AF1B44C5AA00C7E2D9 /* Info.plist */,
 			);
@@ -296,6 +310,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				69799D631B4F361B00E2B083 /* PBXTargetDependency */,
 				698541AB1B44C5AA00C7E2D9 /* PBXTargetDependency */,
 			);
 			name = BuffWatchTests;
@@ -425,6 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69799D661B4F3AA500E2B083 /* pending.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69799D641B4F37D900E2B083 /* BufferAPI.swift in Sources */,
 				698541AE1B44C5AA00C7E2D9 /* BuffWatchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +504,7 @@
 			files = (
 				698541D81B44C5AB00C7E2D9 /* NotificationController.swift in Sources */,
 				698541D61B44C5AB00C7E2D9 /* ExtensionDelegate.swift in Sources */,
+				69799D681B4F573000E2B083 /* FakeData.swift in Sources */,
 				698541DC1B44C5AB00C7E2D9 /* ComplicationController.swift in Sources */,
 				698541D41B44C5AB00C7E2D9 /* InterfaceController.swift in Sources */,
 				698541DA1B44C5AB00C7E2D9 /* GlanceController.swift in Sources */,
@@ -498,6 +516,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		69799D631B4F361B00E2B083 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 698541CB1B44C5AB00C7E2D9 /* BuffWatch WatchKit Extension */;
+			targetProxy = 69799D621B4F361B00E2B083 /* PBXContainerItemProxy */;
+		};
 		698541AB1B44C5AA00C7E2D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 698541941B44C5AA00C7E2D9 /* BuffWatch */;

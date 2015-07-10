@@ -96,7 +96,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 modularLargeTemplate.headerTextProvider = headerText
                 modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: post.text!)
                 
-                let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: modularLargeTemplate)
+                let entry = CLKComplicationTimelineEntry(date: NSDate(timeInterval: -7200, sinceDate: date), complicationTemplate: modularLargeTemplate)
 
                 entries.append(entry)
             }

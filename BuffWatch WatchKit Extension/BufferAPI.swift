@@ -21,12 +21,11 @@ struct Post{
 class BufferAPI: NSObject{
     typealias CompletionPostBlock = (post: [Post]?, error: NSError?) -> ()
 
-    
     func get(completionHandler: CompletionPostBlock) {
         
         
         let url: NSURL = NSURL(string: "https://api.bufferapp.com/1/profiles/\(getProfileId())/updates/pending.json?access_token=\(getToken())")!
-        print(url)
+        
         let ses = NSURLSession.sharedSession()
         let task = ses.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
             if (error != nil) {
@@ -37,16 +36,7 @@ class BufferAPI: NSObject{
                
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                 let updates = json["updates"] as? [NSDictionary]
-                var posts = [Post]()
-                
-                if let updates = updates {
-                    for update in updates {
-                        posts.append(Post(  id: update["id"] as? String,
-                                            due_at: update["due_at"] as? Double,
-                                            due_time: update["due_time"] as? Double,
-                                            text: update["text"] as? String))
-                    }
-                }
+                let posts = self.populatePosts(updates)
                 
                 if (error != nil) {
                     return completionHandler(post: nil, error: error)
@@ -60,7 +50,20 @@ class BufferAPI: NSObject{
         task!.resume()
     }
     
-    
+    func populatePosts(data: [NSDictionary]?) -> [Post]{
+        var posts = [Post]()
+        if let data = data {
+            for d in data {
+                posts.append(Post(  id: d["id"] as? String,
+                                    due_at: d["due_at"] as? Double,
+                                    due_time: d["due_time"] as? Double,
+                                    text: d["text"] as? String))
+            }
+        }
+        
+        return posts
+        
+    }
     
     func getSent(){
         
