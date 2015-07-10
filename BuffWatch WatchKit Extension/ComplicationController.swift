@@ -15,7 +15,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     var posts: [Post]?
     
-    
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
@@ -27,7 +26,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-       handler(NSDate())
+       handler(nil)
     }
     
     func getPrivacyBehaviorForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
@@ -38,7 +37,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         
-        bufferData.get() { (postsData, error) -> Void in
+        bufferData.getFakePending() { (postsData, error) -> Void in
             self.posts = postsData
             
             let post = self.posts![0]
@@ -56,11 +55,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             modularLargeTemplate.headerTextProvider = headerText
             modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: post.text!)
             
-            let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: modularLargeTemplate)
+            let entry = CLKComplicationTimelineEntry(date: NSDate(), complicationTemplate: modularLargeTemplate)
             
             // Call the handler with the current timeline entry
             handler(entry)
-
+            
+           
             
         }
         
@@ -77,11 +77,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries after to the given date
         var entries: [CLKComplicationTimelineEntry] = []
-        
+        var prevPostDate: NSDate = NSDate()
+
         for post in self.posts!
         {
             let startDate = NSDate(timeIntervalSince1970: post.due_at!)
-            print(startDate.timeIntervalSinceDate(date))
+           
             if entries.count < limit && startDate.timeIntervalSinceDate(date) > 0
             {
                 
@@ -96,10 +97,15 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 modularLargeTemplate.headerTextProvider = headerText
                 modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: post.text!)
                 
-                let entry = CLKComplicationTimelineEntry(date: NSDate(timeInterval: -7200, sinceDate: date), complicationTemplate: modularLargeTemplate)
-
+                let entry = CLKComplicationTimelineEntry(date: prevPostDate, complicationTemplate: modularLargeTemplate)
+                
                 entries.append(entry)
+                
+                
             }
+            
+            prevPostDate = startDate
+            
         }
         
         handler(entries)

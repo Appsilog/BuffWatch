@@ -12,6 +12,7 @@
 		69799D641B4F37D900E2B083 /* BufferAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F04BD1B4731C90010C66B /* BufferAPI.swift */; };
 		69799D661B4F3AA500E2B083 /* pending.json in Resources */ = {isa = PBXBuildFile; fileRef = 69799D651B4F3AA500E2B083 /* pending.json */; };
 		69799D681B4F573000E2B083 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69799D671B4F573000E2B083 /* FakeData.swift */; };
+		69799D691B4F7FBC00E2B083 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69799D671B4F573000E2B083 /* FakeData.swift */; };
 		698541991B44C5AA00C7E2D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698541981B44C5AA00C7E2D9 /* AppDelegate.swift */; };
 		6985419B1B44C5AA00C7E2D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985419A1B44C5AA00C7E2D9 /* ViewController.swift */; };
 		6985419E1B44C5AA00C7E2D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6985419C1B44C5AA00C7E2D9 /* Main.storyboard */; };
@@ -485,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69799D691B4F7FBC00E2B083 /* FakeData.swift in Sources */,
 				69799D641B4F37D900E2B083 /* BufferAPI.swift in Sources */,
 				698541AE1B44C5AA00C7E2D9 /* BuffWatchTests.swift in Sources */,
 			);

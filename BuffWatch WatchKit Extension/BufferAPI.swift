@@ -11,7 +11,6 @@ import Foundation
 struct Post{
     var id: String?
     var due_at: Double?
-    var due_time: Double?
     var text: String?
     
 }
@@ -20,11 +19,18 @@ struct Post{
 
 class BufferAPI: NSObject{
     typealias CompletionPostBlock = (post: [Post]?, error: NSError?) -> ()
+    
+    func getFakePending(completionHandler: CompletionPostBlock){
+        return completionHandler(post: FakeData.getPending(), error: nil)
+    }
 
-    func get(completionHandler: CompletionPostBlock) {
-        
-        
+    func getPending(completionHandler: CompletionPostBlock){
         let url: NSURL = NSURL(string: "https://api.bufferapp.com/1/profiles/\(getProfileId())/updates/pending.json?access_token=\(getToken())")!
+        
+        get(url, completionHandler: completionHandler)
+    }
+    
+    func get(url: NSURL, completionHandler: CompletionPostBlock) {
         
         let ses = NSURLSession.sharedSession()
         let task = ses.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
@@ -56,7 +62,6 @@ class BufferAPI: NSObject{
             for d in data {
                 posts.append(Post(  id: d["id"] as? String,
                                     due_at: d["due_at"] as? Double,
-                                    due_time: d["due_time"] as? Double,
                                     text: d["text"] as? String))
             }
         }

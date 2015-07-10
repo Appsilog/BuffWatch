@@ -39,18 +39,19 @@ class FakeData{
     class func getPending(numberOfItems: Int = 10, minutesDelayedBy: Int = 30, startDate: NSDate = NSDate()) -> [Post]{
         var postEntries = [Post]()
         
-        let timeBetween: Double = Double((24 * 60 * 60)/numberOfItems)
+        let timeBetween: Double = Double(Int((24 * 60 * 60)/numberOfItems))
         
         var postTime = startDate.dateByAddingTimeInterval(Double(minutesDelayedBy * 60))
         
         var rand: UInt32 = 0
         
         for var i = 0; i < numberOfItems; ++i {
-            rand = arc4random_uniform(UInt32(textArray.count)) + 1
+            rand = arc4random_uniform(UInt32(textArray.count - 1))
             postEntries.append(Post(    id: "",
                                         due_at: postTime.timeIntervalSince1970,
-                                        due_time: 0,
                                         text: textArray[Int(rand)]))
+            
+            // set next post time
             postTime = postTime.dateByAddingTimeInterval(timeBetween)
         }
         

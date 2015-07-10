@@ -13,6 +13,13 @@ import Foundation
 class BuffWatchTests: XCTestCase {
     let buffer = BufferAPI()
     
+    func testFakeData(){
+        let posts = FakeData.getPending()
+       print(posts)
+        XCTAssertTrue(posts.count > 0)
+        
+    }
+    
     func testGetPending(){
         
         
