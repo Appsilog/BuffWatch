@@ -13,13 +13,32 @@ import Foundation
 class BuffWatchTests: XCTestCase {
     let buffer = BufferAPI()
     
-    func testFakeData(){
-        let posts = FakeData.getPending()
-       print(posts)
-        XCTAssertTrue(posts.count > 0)
+    func testFakeDataPending(){
+        let pendingPosts = FakeData.getPending()
+
+        XCTAssertTrue(pendingPosts.count > 0)
         
+    
     }
     
+    func testFakeDataSent(){
+        let sentPosts = FakeData.getPending()
+        
+        XCTAssertTrue(sentPosts.count > 0)
+    }
+    
+    func testSentDataHasRightOrder(){
+        let sent = FakeData.getSent()
+        
+        var currentDate: NSDate = NSDate()
+        
+        for s in sent {
+            print(NSDate(timeIntervalSince1970: s.due_at!).timeIntervalSinceDate(currentDate), appendNewline: true)
+            XCTAssertTrue(NSDate(timeIntervalSince1970: s.due_at!).timeIntervalSinceDate(currentDate) < 0)
+            currentDate = NSDate(timeIntervalSince1970: s.due_at!)
+        }
+        
+    }
     func testGetPending(){
         
         

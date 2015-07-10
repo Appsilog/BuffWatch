@@ -36,20 +36,36 @@ class FakeData{
                         "Colors that end in 'urple'",
                         "How Many Fingers Am I Holding Up?"]
     
-    class func getPending(numberOfItems: Int = 10, minutesDelayedBy: Int = 30, startDate: NSDate = NSDate()) -> [Post]{
-        var postEntries = [Post]()
+    
+    class func getPending(numberOfItems: Int = 10, startDate: NSDate = NSDate()) -> [Post]{
         
         let timeBetween: Double = Double(Int((24 * 60 * 60)/numberOfItems))
         
-        var postTime = startDate.dateByAddingTimeInterval(Double(minutesDelayedBy * 60))
+        return get(numberOfItems, startDate: startDate, timeBetween: timeBetween)
+    }
+    
+    class func getSent(numberOfItems: Int = 10, startDate: NSDate = NSDate()) -> [Post]{
+        
+        
+        let timeBetween: Double = Double(Int(-(24 * 60 * 60)/numberOfItems))
+        
+        return get(numberOfItems, startDate: startDate, timeBetween: timeBetween)
+        
+    }
+    
+    private class func get(numberOfItems: Int, startDate: NSDate, timeBetween: Double) -> [Post]{
+        var postEntries = [Post]()
+        
+        var postTime = startDate.dateByAddingTimeInterval(timeBetween)
         
         var rand: UInt32 = 0
         
         for var i = 0; i < numberOfItems; ++i {
             rand = arc4random_uniform(UInt32(textArray.count - 1))
-            postEntries.append(Post(    id: "",
-                                        due_at: postTime.timeIntervalSince1970,
-                                        text: textArray[Int(rand)]))
+            
+            postEntries.append(Post(id: "",
+                                    due_at: postTime.timeIntervalSince1970,
+                                    text: textArray[Int(rand)]))
             
             // set next post time
             postTime = postTime.dateByAddingTimeInterval(timeBetween)
@@ -57,6 +73,5 @@ class FakeData{
         
         return postEntries
     }
-    
    
 }

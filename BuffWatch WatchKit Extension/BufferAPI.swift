@@ -23,7 +23,18 @@ class BufferAPI: NSObject{
     func getFakePending(completionHandler: CompletionPostBlock){
         return completionHandler(post: FakeData.getPending(), error: nil)
     }
-
+    
+    
+    func getFakeSent(completionHandler: CompletionPostBlock){
+        return completionHandler(post: FakeData.getSent(), error: nil)
+    }
+    func getSent(completionHandler: CompletionPostBlock){
+        let url: NSURL = NSURL(string: "https://api.bufferapp.com/1/profiles/\(getProfileId())/updates/sent.json?access_token=\(getToken())")!
+        
+        get(url, completionHandler: completionHandler)
+    }
+    
+    
     func getPending(completionHandler: CompletionPostBlock){
         let url: NSURL = NSURL(string: "https://api.bufferapp.com/1/profiles/\(getProfileId())/updates/pending.json?access_token=\(getToken())")!
         

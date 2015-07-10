@@ -22,10 +22,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        handler(NSDate())
+        // by setting a date/time, all dates before will be dimmed
+        // nil to ignore start date
+        handler(nil)
     }
     
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
+        // by setting a date/time, all dates after will be dimmed
+        // nil to ignore end date
        handler(nil)
     }
     
@@ -71,7 +75,41 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries prior to the given date
-        handler(nil)
+        var entries: [CLKComplicationTimelineEntry] = []
+       
+        bufferData.getFakeSent() { (postsData, error) -> Void in
+            
+            
+            for post in postsData!
+            {
+                let startDate = NSDate(timeIntervalSince1970: post.due_at!)
+                
+                if entries.count < limit && startDate.timeIntervalSinceDate(date) < 0
+                {
+                    
+                    let modularLargeTemplate = CLKComplicationTemplateModularLargeStandardBody()
+                    let headerText   = CLKTimeTextProvider(date: startDate)
+                    
+                    let bufferImage = UIImage(named: "Complication/Modular")
+                    let line1Image  = CLKImageProvider(backgroundImage: bufferImage!, backgroundColor: UIColor.whiteColor())
+                    
+                    modularLargeTemplate.headerImageProvider = line1Image
+                    modularLargeTemplate.headerTextProvider = headerText
+                    modularLargeTemplate.body1TextProvider = CLKSimpleTextProvider(text: post.text!)
+                    
+                    let entry = CLKComplicationTimelineEntry(date: startDate, complicationTemplate: modularLargeTemplate)
+                    
+                    entries.append(entry)
+                    
+                    
+                }
+                
+              
+                
+            }
+        }
+        
+        handler(entries)
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
