@@ -41,7 +41,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         
-        bufferData.getFakePending() { (postsData, error) -> Void in
+        bufferData.getPending() { (postsData, error) -> Void in
             self.posts = postsData
             
             let post = self.posts![0]
@@ -77,7 +77,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // Call the handler with the timeline entries prior to the given date
         var entries: [CLKComplicationTimelineEntry] = []
        
-        bufferData.getFakeSent() { (postsData, error) -> Void in
+        bufferData.getSent() { (postsData, error) -> Void in
             
             
             for post in postsData!
